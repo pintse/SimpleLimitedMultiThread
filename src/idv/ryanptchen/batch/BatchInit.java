@@ -3,13 +3,30 @@ package idv.ryanptchen.batch;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * 
+ * @author ryanchen
+ *
+ */
 public class BatchInit {
 	//private static Logger log = LogManager.getLogger("BatchInit");
+	
+	/**
+	 * 
+	 */
 	public static Stack<Job> jobStack;
-
+	
+	/**
+	 * 
+	 */
 	private static int JobFinishCount = 0;
 
-	
+	/**
+	 * 
+	 * @param batchService
+	 * @param jobs
+	 * @throws Exception
+	 */
 	public void batchJob(BatchService batchService, Stack<Job> jobs) throws Exception{
 		List<?> source = (List<?>)batchService.retrieveSource() ;
 		int JobAmount = source.size();
@@ -50,12 +67,21 @@ public class BatchInit {
 		
 	}
 
+	/**
+	 * 
+	 * @param job
+	 */
 	public synchronized static void infoJobFinishCount( Job job){
 		++JobFinishCount;
 		jobStack.push(job);
 		
 	}
 	
+	/**
+	 * 
+	 * @param i
+	 * @param message
+	 */
 	private void loga(int i, String message){
 		if (i % 500 == 0){
 			System.out.println("--doing :" +i+", "+message);

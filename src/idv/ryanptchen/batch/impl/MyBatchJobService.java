@@ -5,6 +5,11 @@ import java.util.Collection;
 
 import idv.ryanptchen.batch.BatchService;
 
+/**
+ * My Batch Job Service must implement BatchService interface.
+ * @author ryanchen
+ *
+ */
 public class MyBatchJobService implements BatchService {
 
 	@Override

@@ -1,10 +1,22 @@
 package idv.ryanptchen.batch;
 
+/**
+ * 
+ * @author ryanchen
+ *
+ */
 public class JobImpl implements Job {
 
 	//private static Logger log = Logger.getLogger(JobImpl.class);
 	
+	/**
+	 * 
+	 */
 	private Object data;
+	
+	/**
+	 * 
+	 */
 	private BatchService service;
 	//private 
 	
